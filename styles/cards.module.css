@@ -1,0 +1,19 @@
+.card{
+    width: 300px;
+    height: 210px;
+}
+.image{
+height: 140px;
+}
+.skeleton_card{
+    max-width: 345px;
+}
+.skeleton_image{
+    width: 345px;
+    height: 140px;
+}
+.display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

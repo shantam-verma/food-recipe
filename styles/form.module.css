@@ -1,0 +1,30 @@
+.container{
+    /* min-height: 90vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.innerBox{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 70%;
+    height: fit-content;
+    /* width: fit-content; */
+    padding: 1rem;
+    border: 1px solid #6C6C6C;
+    background-color: rgb(250, 250, 250);
+    border-radius: 5px;
+}
+.footer{
+    display: flex;
+    gap: 9px;
+    margin: 0.5rem 0 0.2rem 0;
+}
+.btn{
+    margin-top: 1rem !important;
+}
+.link{
+    font-size: 14px;
+    color:  #0000EE;
+}
