@@ -159,11 +159,11 @@ export default function SignUp() {
                   </Box>
                 </Box>
               </Box>
-              {/* <Toast
+              <Toast
                 openToast={openToast}
                 setOpenToast={setOpenToast}
                 toastType={toastType}
-              /> */}
+              />
             </>
           )}
         </Formik>
