@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { FIREBASE_API_KEY } from "@/utils/constants";
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,6 +19,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const analytics =
+  app.name && typeof window !== "undefined" ? getAnalytics(app) : null;
 const auth = getAuth();
 export { app, auth };
