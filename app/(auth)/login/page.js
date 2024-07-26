@@ -43,7 +43,7 @@ export default function Login() {
   return (
     <Template>
       <CssBaseline />
-      <Container maxWidth={matches ? "sm" : "xl"}>
+      <Container maxWidth="sm">
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={LoginValidationSchema}
