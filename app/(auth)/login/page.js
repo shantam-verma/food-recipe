@@ -17,10 +17,14 @@ import Cookies from "js-cookie";
 import Template from "../../template";
 import { ACCESS_KEY } from "@/utils/constants";
 import { loginAuth } from "@/app/api/authRoutes";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@emotion/react";
 
 export default function Login() {
   const { openToast, setOpenToast, toastType, setToastType } =
     useGlobalContext();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   const router = useRouter();
   const handleLoginAuth = async (values) => {
@@ -39,7 +43,7 @@ export default function Login() {
   return (
     <Template>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <Container maxWidth={matches ? "sm" : "xl"}>
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={LoginValidationSchema}

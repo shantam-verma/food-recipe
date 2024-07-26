@@ -9,7 +9,7 @@ const Outlined = ({ text, ...rest }) => (
   </Button>
 );
 const Contained = ({ text, ...rest }) => (
-  <Button  variant="contained" {...rest}>
+  <Button variant="contained" {...rest}>
     {text}
   </Button>
 );
@@ -32,6 +32,8 @@ export default function ButtonControl({ btnType, text, ...rest }) {
     ButtonComponent = Contained;
   } else if (btnType === "loading-btn") {
     ButtonComponent = LoadingBtn;
+  } else {
+    return null; // Handle the case where btnType does not match any known type
   }
 
   return <ButtonComponent text={text} {...rest} />;

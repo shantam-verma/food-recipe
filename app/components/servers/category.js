@@ -9,6 +9,8 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { useRouter } from "next/navigation";
 import { useGlobalContext } from "@/provider/useContext";
+import { useTheme } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const elements = [
   { icon: <LocalPizzaIcon key="Pizza" />, label: "Italian" },
@@ -20,6 +22,8 @@ const elements = [
 export default function Category() {
   const { activeFab, setActiveFab } = useGlobalContext();
   const route = useRouter();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   const handleClick = (event) => {
     if (event === "Italian") {
@@ -34,8 +38,14 @@ export default function Category() {
     setActiveFab(event);
   };
   return (
-    <Stack alignItems="center">
-      <Stack direction="row" gap={10}>
+    <Stack alignItems="center" justifyContent="center">
+      <Stack
+        direction="row"
+        alignItems="center"
+        justifyContent="center"
+        flexWrap="wrap"
+        gap={matches ? 10 : 5}
+      >
         {elements.map((icon, index) => (
           <Box key={`${icon.label}-${index}`}>
             <Stack alignItems="center" gap={1}>
